@@ -1,6 +1,8 @@
 package tfdxl.chapter01;
 
 
+import com.alibaba.fastjson.JSON;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,5 +25,6 @@ public class StreamProcessing01 {
 
         //并行处理
         List<Apple> heavyApple2 = inventory.parallelStream().filter((Apple apple) ->apple.getWeight()>4).collect(Collectors.toList());
+        System.out.println("data: "+ JSON.toJSON(heavyApple2));
     }
 }
